@@ -103,7 +103,7 @@ def ensemble(rng, p_bar, n=1000, max_steps=100000):
     """Solo hace falta z (la losa es infinita en x,y)."""
     N, gam, k0, p_exc = params(p_bar)
     z = rng.random(n) * H
-    x = np.zeros(n) if START_AT_NU0 else sample_freq(rng, n, gam)
+    x = sample_freq(rng, n, gam)
     alive = np.ones(n, bool)
     fate = np.zeros(n, int)            # 0 vivo, 1 excimero, 2 escape z=0, 3 escape z=H
     nabs = np.zeros(n, int)
